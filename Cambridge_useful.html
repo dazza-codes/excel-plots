@@ -1,0 +1,415 @@
+<html>
+ 
+<meta name="Author" content="Nick Cumming">
+<meta keywords" content="VB, VB5, VB6, Visual Basic, visual basic functions, vb help"
+<meta description" content="A basic file containing some useful array and number manipulation functions.  Freely available and modifiable"
+<head>
+<title>
+VB Files and help
+</title>
+
+<STYLE TYPE="text/css">
+p {text-decoration:"none";}
+</STYLE>
+
+<SCRIPT LANGUAGE="JavaScript"><!--
+
+var browser=false;
+if(((navigator.appName=="Netscape")&&(parseInt(navigator.appVersion)>=3))||(parseInt(navigator.appVersion)>=4))
+browser=true;
+
+if (browser){
+var object=new Array();
+
+object['help']= new objectdata(30,76,"helpover.gif","help.gif","Help pages");
+object['files']= new objectdata(30,76,"filesover.gif","files.gif","VB Files");
+
+ 
+}
+
+function objectdata(hsize,vsize,replaceimg,restoreimg,mess)
+{if(browser) 
+{                this.mess=mess;
+                        this.simg=new Image(hsize,vsize);
+                        this.simg.src=replaceimg;
+                        this.rimg=new Image(hsize,vsize);
+                        this.rimg.src=restoreimg;                                                                                        }}
+
+function ReplaceOrig(name)
+{if(browser) 
+{window.status=object[name].mess;
+document[name].src=object[name].simg.src;}} 
+
+function RestoreOrig(name)
+{if(browser) 
+{window.status="";
+document[name].src=object[name].rimg.src;}} 
+
+
+// End of JavaScript -->
+</SCRIPT>
+
+
+</head>
+
+<Body bgcolor="#009933" LINK="#002233" vlink="#003366">
+<table border=0, cellpadding=0 cellspacing=0 width="100%" height="100%">
+<tr>
+<td height="200" width="200" background="corner.gif" valign="top" align="left">
+
+<img src="vbhelplogo.gif"><A name="pagetop">
+</td>
+
+<td height="200" background="top.gif" valign="top" align="center">
+   <font face="arial,helvetica,sans-serif"><font size="32">
+   VB Files and Support
+   </font>
+<p><P>
+<font face="arial,helvetica,sans-serif"><font color="#ffffff">
+ 
+</td></tr>
+<tr>
+<td bgcolor="#009933" background="side.gif" width="200" align="center" valign="top">
+   <a href="index.html" onmouseover="ReplaceOrig('files');return true;" onmouseout="RestoreOrig('files');"> 
+   <img src="files.gif" border="0" name="files" height="30" width="76"></a>
+   <p>
+   <a href="#helpanchor" onmouseover="ReplaceOrig('help');return true;" onmouseout="RestoreOrig('help');">
+   <img src="help.gif" name="help" height="30" width="76" border="0"></a>
+</td>
+<td bgcolor="#0000ff" align="left" valign="top">
+
+
+    <table border=0 cellpadding=20 cellspacing=20   width="90%">
+	<tr>
+	<td bgcolor=#ffffff valign="top" align="left">
+	   <A name="helpanchor">
+	   
+	   <font face="arial,helvetica,sans-serif">
+	   <H2>useful.bas documentation</h2>
+	   <p>useful.bas is just a standard basic module. It's what I've been writing useful
+		functions in whenever I need one. To use it just save it to your hard drive, and add it to your
+		project.  Feel free to add more if you want, but do send any funky additions to the <a href="mailto:vbsupport@mrc-cbu.cam.ac.uk">vbsupport list</a>.
+	</p><p>
+		There are quite a lot of functions in it so here's a list.
+
+	</font>
+		
+	</td>
+	</tr>
+	<tr>
+	<td  valign="top"><Font face="arial,helvetica,sans-serif">
+	<table border=0 cellpadding=20 cellspacing=10>
+	<tr>
+	<td bgcolor=#ffffff valign="top" align="left" width="40%">
+	<Font face="arial,helvetica,sans-serif"><a href="#AlphabetPosition">AlphabetPosition</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArrayAContainsArrayB">ArrayAContainsArrayB</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArraysAreIdentical">ArraysAreIdentical</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArraysSharePosition">ArraysSharePosition</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArrayStdDev">ArrayStdDev</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArrSqr">ArrSqr</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArrSum">ArrSum</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#DotProduct">DotProduct</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#Factorial">Factorial</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#GaussianDeviate">GaussianDeviate</a></font>
+	
+	</td>
+
+	<td width="10%"><img src="../space.gif" width="100%"></td>
+	<td bgcolor="#ffffff" valign="top" align="left" width="40%">
+	<Font face="arial,helvetica,sans-serif"><a href="#IsEven">IsEven</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#IsInArray">IsInArray</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#Largest">Largest</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#Largest">LargestN</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#LetterAtPosition">LetterAtPosition</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#PickNfromX">PickNfromX</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ShuffleArray">ShuffleArray</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#SmallestN">SmallestN</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#SubscriptOfLargest">SubscriptOfLargest</a></font>
+	<Font face="arial,helvetica,sans-serif"><br><a href="#ArrSum">SumOf</a></font>
+	</td></tr></table>
+    </tr>
+    <tr>
+    <td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="alphabetposition">AlphabetPosition</h2></center></font>
+	<p> Takes a single letter string variable as an arguement and returns its position within the alphabet as an integer.
+	<p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>IntegerVariable</i> = <b>AlphabetPosition</b>(<i>SingleLetterString</i>)
+	</font>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+   </td></tr>
+	<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArrayAContainsArrayB">ArrayAContainsArrayB</h2></center></font>
+	<p> This function takes two arrays of variant type as arguments and checks whether the first 
+	contains the second.<br>Returns an integer representing the start point
+	of array b within array a, or -999 if no match is found.</p>
+	<p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>IntegerVariable</i> = <b>ArrayAContainsArrayB</b>(<i>VariantArray_A</i>,<i>VariantArray_B</i>)
+	</font>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArrayMean">ArrayMean</h2></center></font>
+	<p> This function takes one variant array as an argument returns a the arithmetic mean of all the 
+	numeric elements within the array as a Double.<br>Note non-numeric array items are ignored</p>
+	<p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>ArrayMean</b>(<i>VariantArray</i>)
+	</font>
+	<p align="right"><font face="system" size="-1"><a href="#pagetop">Top of Page</a></font></p>
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArraysAreIdentical">ArraysAreIdentical</h2></center></font>
+	<p> Takes two variant arrays as arguments and returns a boolean representing wether the two argument arrays were identical.<br>Useful for checking you haven't used the same trial before.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>BooleanVariable</i> = <b>ArraysAreIdentical</b>(<i>VariantArray_A</i>,<i>VariantArray_B</i>)
+	</font>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArraysSharePosition">ArraysSharePosition</h2></center></font>
+	<p> 
+	Takes two variant arrays as args and checks whether they share an element at the same subscript.
+	<br>It checks relative to the start of each array, so it doesn't matter if the two arrays don't share the same base.
+	<br>Good for checking lists for whether they share serial positions.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>BooleanVariable</i> = <b>ArraysSharePosition</b>(<i>VariantArray_A</i>,<i>VariantArray_B</i>)
+	</font>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArrayStdDev">ArrayStdDev</h2></center></font>
+	<p> 
+	Takes an array of numeric values and calculates the sample standard deviation.
+	<br>The standard deviation is returned as a double.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>ArrayStdDev</b>(<i>VariantArray</i>)
+	</font>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArrSqr">ArrSqr</h2></center></font>
+	<p> 
+	Calculates the squares of all the numeric elements in an array and returns them as an array to a variant.
+	<br>Note: Again all non-numeric array elements are ignored.  They come back as zeros.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>VariantVariable</i> = <b>ArraySqr</b>(<i>VariantArray</i>)
+	</font>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ArrSum">ArrSum / SumOf</h2></center></font>
+	<p> 
+	These two do the same thing basically. ArrSum takes a vairant array and returns the arithmetic sum of all the numeric elements in it.
+	<br>SumOf takes a comma-separated list of numbers to be summed.
+	<br>Both return doubles.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>ArrSum</b>(<i>VariantArray</i>)
+	</font></p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>SumOf</b>(<i>var1, var2, var3, ..., varN</i>)
+	</font></p>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="DotProduct">DotProduct</h2></center></font>
+	<p> 
+	Takes two variant arrays, which must be of the same dimensions and returns the dot-product of the two vectors.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>VariantVariable</i> = <b>DotProduct</b>(<i>VariantArray</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="Factorial">Factorial</h2></center></font>
+	<p> 
+	Takes an integer variable and returns its factorial as a Long.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>LongVariable</i> = <b>Factorial</b>(<i>IntegerVariable</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="GaussianDeviate">GaussianDeviate</h2></center></font>
+	<p> 
+	Gives a random number which, over repeated calls to this function will give a zero-centred gaussian 
+	distribution with a standard deviation specified as a double-precision argument.
+	<br>Very useful for modelling noise on anything.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>GaussianDeviate</b>(<i>Double_StandardDeviation</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="IsEven">IsEven</h2></center></font>
+	<p> 
+	Takes an integer and returns whether it is an even number or not as a boolean
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>BooleanVariable</i> = <b>IsEven</b>(<i>IntegerVariable</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="IsInArray">IsInArray</h2></center></font>
+	<p> 
+	Takes a single item (non-array) variant and an array as arguments and looks through the array for the item.
+	<br>Returns a boolean indicating whether the item was present or not.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>BooleanVariable</i> = <b>IsInArray</b>(<i>VariantVariable</i>,<i>VariantArray</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="Largest">Largest / LargestN</h2></center></font>
+	<p> 
+	These two do the same thing basically. Use wichever fits best with the data structures in your program.
+	<br>Largest takes a vairant array and returns the value of the largest.
+	<br>LargestN takes a comma-separated list of numbers and returns the value of the largest.
+	<br>Both return doubles. 
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>Largest</b>(<i>VariantArray</i>)
+	</font></p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>LargestN</b>(<i>var1, var2, var3, ..., varN</i>)
+	</font></p>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="LetterAtPosition">LetterAtPosition</h2></center></font>
+	<p> 
+	This is the converse of <a href="#AlphabetPosition">AlphabetPosition</a>.  
+	Takes an integer between 1 and 26 and returns the corresponding letter.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>StringVariable</i> = <b>LetterAtPosition</b>(<i>IntegerVariable</i>)
+	</font></p>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="PickNfromX">PickNfromX</h2></center></font>
+	<p> 
+	This function picks N items at random from a one-dimensioned array which has
+	at least N entries. It won't pick the same item more than once, unless that item 
+	has multiple entries in the large array.
+	<br>The array needs to be 1-based (have its lowest subscript as 1).
+	The function returns a 1-based variant array.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>VariantVariable</i> = <b>PickNfromX</b>(<i>IntegerVariable</i>, <i>VariantArray</i>)
+	</font></p>
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="ShuffleArray">ShuffleArray</h2></center></font>
+	<p> 
+	Similar to PickNfromX, but always returns an array of equal dimensions to the one
+	given, and has the option of specifying order restrictions.
+	Takes a variant array and optionally, a boolean specifying whether to restrict arrays
+	 returned to those which don't contain three or more items in the same order as in 
+	the input array.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>VariantVar</i> = <b>ShuffleArray</b>(<i>VariantArray</i>, <i><font face="times-new-roman,times,serif">[optional]</font>BooleanVariable</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="SmallestN">SmallestN</h2></center></font>
+	<p> 
+	Takes a comma-separated list of numbers and returns the value of the smallest as a double.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>DoubleVariable</i> = <b>SmallestN</b>(<i>var1, var2, var3, ..., varN</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+<tr><td bgcolor="#ffffff" valign="Top"><font face="arial,helvetica,sans-serif">
+	<center><h2><font face="arial,helvetica,sans-serif">
+	<a name="SubscriptOfLargest">SubscriptOfLargest</h2></center></font>
+	<p> 
+	Takes a variant array of numeric variables as an argument and returns the array
+	subscript of the largest one as an integer.<br> Useful for modelling winner-takes all competition.
+	</p><p> Usage:</p>
+	<p><font face="couriernew,courier,terminal">
+	<i>IntegerVariable</i> = <b>SubscriptOfLargest</b>(<i>VariantArray</i>)
+	</font></p>
+	
+	<p align="right"><font face="sans-serif" size="-3"><a href="#pagetop">Top of Page</a></font></p>
+
+</td></tr>
+
+</table>
+
+</td>
+</tr></table>
+</body></html>
+<html></html>

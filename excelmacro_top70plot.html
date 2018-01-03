@@ -1,0 +1,85 @@
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Excel Macro - Top70 ERP Plot</title>
+<meta name="author" content="Darren Weber">
+</head>
+
+<body>
+
+<h1>Excel Macro - ERP Plot Top70</h1>
+<p>These excel macros are provided with user forms.&nbsp; They should be 
+available in the excel file <a href="ERPplot_top70.xls">ERPplot_top70.xls</a>, but 
+otherwise they can be downloaded and installed into a Visual Basic Project, 
+according to the procedure described in <a href="excelmacro_utilities.html">
+Excel Macro Utilities</a>.&nbsp; To facilitate easy use, they can be run from 
+the 'tools - macro - macros (alt-F8)' menu:</p>
+<p><img border="0" src="ToolsMacroMenu.gif" width="484" height="430"></p>
+<p>When in the macro dialog box (as below), select and run any of the &quot;run_xxx&quot; 
+macros. These macros  prompt for relevant input and, given the OK command, proceed to 
+modify all chart objects embedded in the active sheet. The macro names indicate what they do:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" bordercolor="#111111" width="80%" id="AutoNumber1">
+  <tr>
+    <td width="30%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top: medium none #111111; border-bottom: medium none #111111">
+    <ul>
+      <li>run_scale</li>
+      <li>run_series_properties</li>
+      <li>run_series_range</li>
+      <li>run_Xaxis</li>
+      <li>run_Yaxis</li>
+    </ul>
+    </td>
+    <td width="70%" style="border-style: none; border-width: medium">
+    <dl>
+      <dd>modifies the scale legend (also called from other macros)</dd>
+      <dd>modifies the line-style|width|color for the waveforms plotted</dd>
+      <dd>modifies the range of rows plotted for each series</dd>
+      <dd>modifies x-axis scale and properties</dd>
+      <dd>likewise</dd>
+    </dl>
+    </td>
+  </tr>
+</table>
+<p><img border="0" src="MacroDialog.gif" width="402" height="310"></p>
+<h2>For Example</h2>
+<p>The &quot;run_Yaxis&quot; macro presents the &quot;Value(Y) Axis Scales&quot; form.&nbsp; 
+Specify the maximum and minimum values, the major and minor tick 
+mark units and the orientation of the values (reverse is negative up, the ERP 
+convention).&nbsp; Given the OK command, all charts  are  modified, indicated by an 
+information message, and the &quot;Axis Properties&quot; form appears.&nbsp; Defines 
+whether or not the axis is drawn and how it appears (fields here are the same as 
+those in the standard excel axis dialog box).&nbsp; Again, given the OK command, all charts 
+are modified and the &quot;Charts Scale 
+Legend&quot; form appears.&nbsp; This defines the attributes of the small scale 
+legend in the top right of the plot figure in <a href="ERPplot_top70.xls">
+ERPplot_top70.xls</a> (on my screen that's at Xorigin = 
+1000, Yorigin = 150).&nbsp; The &quot;Multiply ...&quot; fields determine the 
+length of the x/y axis in the legend, as a multiple of the major unit length.&nbsp; 
+At present, this last macro requires that sheet 1 contains the time points of 
+the waveforms in column 126, so that it can automatically determine the 
+beginning and ending time of the epoch for the waveforms displayed.&nbsp; This 
+last macro first ensures that all chart plots are equal size, including the 
+chart titles, and then automatically determines the correct size of the scale 
+legend.&nbsp; If the cancel button is pressed, only that stage of the macro is 
+aborted, the next stage will be available.</p>
+<p><img border="0" src="YaxisPrompt.gif" width="151" height="260">&nbsp;&nbsp;&nbsp;
+<img border="0" src="AxisProperties.gif" width="263" height="265">&nbsp;&nbsp;&nbsp;
+<img border="0" src="ScaleLegendPrompt.gif" width="205" height="286"></p>
+<h2>Warranties? Licences?</h2>
+<p>The .xls file(s) and associated macros/forms are provided with no implied or 
+express warranties. Please use them and distribute them as you will, entirely at 
+your own risk (please abide by the GPL if you redistribute these utilities, see
+<a href="http:/www.gnu.org">http:/www.gnu.org</a>). These tools been developed 
+and tested on limited dataset specifications, please be careful to verify 
+operations on <i>your data</i>. Some of the tools are available now, but still 
+under development. If you have any advice, please send email to
+<a href="mailto:darren.weber@flinders.edu.au">Darren.Weber@flinders.edu.au</a> 
+;-) </p>
+
+</body>
+
+</html>
